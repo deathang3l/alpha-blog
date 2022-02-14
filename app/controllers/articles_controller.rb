@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  define show
+  def show
     @mArticle = Article.find(params[:id])
   end
 end
