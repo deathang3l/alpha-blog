@@ -1,1 +1,6 @@
 <h1>Show</h1>
+
+<p>Title: <%= if !@mArticle.nil? then @mArticle.title else "No article by that id" %></p>
+<p>Desc: <%= if !@mArticle.nil? then @mArticle.description else "No article by that id" %></p>
+
+
