@@ -1,9 +1,9 @@
 <h1>Create new article</h1>
 
-<%= if @mArticle.errors.any? then %>
+<% if @mArticle.errors.any? then %>
   <h2>Following error prevented the article from being saved</h2>
   <ul>
-    <%= @mArticle.errors.full_messages.each do | msg | %>
+    <% @mArticle.errors.full_messages.each do | msg | %>
       <li><%= msg %></li>
     <% end %>
   </ul>
