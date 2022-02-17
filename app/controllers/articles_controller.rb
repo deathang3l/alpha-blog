@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    render plain: params[:article]
+    @mArticle = Article.new(params.require(:article).permit(:title, :description, :body))
+    @mArticle.save
   end
 end
