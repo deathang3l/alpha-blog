@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-
+    @mArticle = Article.new
   end
 
   def create
@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     if @mArticle.save then
       redirect_to @mArticle
     else
-      render html: helpers.tag.strong("Failed, remember about content constraints")
+      render 'new'
     end
   end
 end
