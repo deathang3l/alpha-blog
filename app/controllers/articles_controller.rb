@@ -13,6 +13,10 @@ class ArticlesController < ApplicationController
 
   def create
     @mArticle = Article.new(params.require(:article).permit(:title, :description, :body))
-    @mArticle.save
+    if @mArticle.save then
+      redirect_to article_path(@mArticle)
+    else
+      render html: helpers.tag.strong("Failed, remember about content constraints")
+    end
   end
 end
