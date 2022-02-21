@@ -26,7 +26,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
-
+    @mArticle = Article.find(params[:id])
+    if @mArticle.update(params.require(:article).permit(:title, :description, :body)) then
+      flash[:notice] = "Article was updated successfully."
+      redirect_to @mArticle
+    else
+      render 'edit'
+    end
   end
 
 end
