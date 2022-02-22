@@ -1,14 +1,14 @@
 <%= form_with(model: @mArticle, local: true) do | f | %>
   <p>
-    <%= f.label :title %><br/>
+    <%= f.label "Title (6-100 chars)" %><br/>
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :description %><br/>
+    <%= f.label "Description (6-300 chars)" %><br/>
     <%= f.text_field :description %>
   </p>
   <p>
-    <%= f.label :body %><br/>
+    <%= f.label "Body (10-1500 chars)" %><br/>
     <%= f.text_area :body %>
   </p>
   <p>
