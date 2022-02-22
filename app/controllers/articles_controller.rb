@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "(V) Article was created successfully."
       redirect_to @mArticle
     else
-      flash[:notice] = "(X) #{@mArticle.errors.join('|')}"
+      flash[:notice] = "(X) #{@mArticle.errors.to_a.join('|')}"
       render 'new'
     end
   end
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "(V) Article was updated successfully."
       redirect_to @mArticle
     else
-      flash[:notice] = "(X) #{@mArticle.errors.join('|')}"
+      flash[:notice] = "(X) #{@mArticle.errors.to_a.join('|')}"
       render 'edit'
     end
   end
