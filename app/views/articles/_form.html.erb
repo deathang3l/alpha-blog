@@ -1,12 +1,3 @@
-<% if @mArticle.errors.any? then %>
-  <h2>Following errors prevented the article from being saved</h2>
-  <ul>
-    <% @mArticle.errors.full_messages.each do | msg | %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= form_with(model: @mArticle, local: true) do | f | %>
   <p>
     <%= f.label :title %><br/>
