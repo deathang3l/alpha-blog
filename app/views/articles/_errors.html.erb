@@ -1,8 +1,8 @@
 <% if @mArticle.errors.any? then %>
   <h2>Following errors prevented the article from being saved</h2>
-  <ul>
+  <ul style="background-color:red;color:white;">
     <% @mArticle.errors.full_messages.each do | msg | %>
-      <li style="background-color:red;color:white;"><%= msg %></li>
+      <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
