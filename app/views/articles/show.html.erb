@@ -4,4 +4,6 @@
 <p>Desc: <%= @mArticle.description %></p>
 <p><%= @mArticle.body %></p>
 
-
+<%= link_to 'Edit', edit_article_path(@mArticle) %> |
+<%= link_to 'Delete', article_path(@mArticle), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> |
+<%= link_to 'Return to listing', article_path %>
