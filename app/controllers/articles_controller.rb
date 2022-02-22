@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was updated successfully."
       redirect_to @mArticle
     else
-      render 'edit'
+      redirect_to article_path
     end
   end
 
