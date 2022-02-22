@@ -2,7 +2,7 @@
 
 <% if @mArticle.errors.any? then %>
   <p>Following errors prevented creation of the article</p>
-  <% @mArticle.errors.full_messages.each | msg | do %>
+  <% @mArticle.errors.full_messages.each do | msg | %>
     <%= msg %>
   <% end %>
 <% end %>
