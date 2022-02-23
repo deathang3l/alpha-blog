@@ -16,3 +16,14 @@
   letter-spacing: -1px;
   font-weight: bold;
 }
+
+#home-container {
+  margin-top: 25px;
+}
+
+.p-5 {
+  background-image: asset-url('unsplash1.jpg')
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
