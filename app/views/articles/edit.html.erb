@@ -1,12 +1,5 @@
-<h1>Edit article</h1>
+<div id="page-content">
+  <h1 class="text-center mt-4">Edit article</h1>
 
-<% if @mArticle.errors.any? then %>
-  <p>Following errors prevented creation of the article</p>
-  <% @mArticle.errors.full_messages.each do | msg | %>
-    <%= msg %>
-  <% end %>
-<% end %>
-
-<%= render 'form' %>
-
-<%= link_to 'Cancel edit', articles_path %>
+  <%= render 'form' %>
+</div>

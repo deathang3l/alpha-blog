@@ -1,17 +1,36 @@
-<%= form_with(model: @mArticle, local: true) do | f | %>
-  <p>
-    <%= f.label "Title (6-100 chars)" %><br/>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label "Description (6-300 chars)" %><br/>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label "Body (10-1500 chars)" %><br/>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="container">
+  <% if @mArticle.errors.any? then %>
+    <p>Following errors prevented creation of the article</p>
+    <% @mArticle.errors.full_messages.each do | msg | %>
+      <%= msg %>
+    <% end %>
+  <% end %>
+
+  <%= form_with(model: @mArticle, local: true) do | f | %>
+    <div class="form-group row">
+      <%= f.label "Title (6-100 chars)", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label "Description (6-300 chars)", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_field :description, rows: 3, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group row"
+      <%= f.label "Body (10-1500 chars)", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_area :body, rows: 10, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= f.submit class: "btn, btn-outline-light btn-lg" %>
+    </div>
+
+    <%= link_to 'Return to listing', articles_path %>
+
+  <% end %>
+</div>

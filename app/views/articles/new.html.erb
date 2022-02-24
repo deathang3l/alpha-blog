@@ -1,12 +1,5 @@
-<h1>Create new article</h1>
+<div id="page-content">
+  <h1 class="text-center mt-4">Create new article</h1>
 
-<% if @mArticle.errors.any? then %>
-  <p>Following errors prevented creation of the article</p>
-  <% @mArticle.errors.full_messages.each do | msg | %>
-    <%= msg %>
-  <% end %>
-<% end %>
-
-<%= render 'form' %>
-
-<%= link_to 'Return to listing', articles_path %>
+  <%= render 'form' %>
+</div>
