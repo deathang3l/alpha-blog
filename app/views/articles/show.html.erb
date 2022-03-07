@@ -1,13 +1,3 @@
-<h1>Show</h1>
-
-<p>Title: <%= @mArticle.title %> (Last update: <%= @mArticle.updated_at %>)</p>
-<p>Desc: <%= @mArticle.description %></p>
-<p><%= @mArticle.body %></p>
-
-<%= link_to 'Edit', edit_article_path(@mArticle) %> |
-<%= link_to 'Delete', article_path(@mArticle), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %> |
-<%= link_to 'Return to listing', articles_path %>
-
 <div id="page-content">
   <h2 class="text-center mt-4"><%= @mArticle.title %></h2>
   <div class="container">
@@ -19,7 +9,7 @@
           </div>
           <div class="card-body">
             <p class="card-text"><%= @mArticle.description %></p>
-            <p class="card-text"><%= @mArticle.body %></p>
+            <p class="card-text"><%= simple_format(@mArticle.body) %></p>
             <%= link_to "Edit", edit_article_path(@mArticle), class: "btn btn-outline-info" %>
             <%= link_to "Delete", article_path(@mArticle), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-danger" %>
           </div>
