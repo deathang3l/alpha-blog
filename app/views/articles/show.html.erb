@@ -8,8 +8,8 @@
             by Tokarz Cis
           </div>
           <div class="card-body">
-            <p class="card-text"><%= @mArticle.description %></p>
-            <p class="card-text"><%= simple_format(@mArticle.body) %></p>
+            <div class="card-text"><%= @mArticle.description %></div>
+            <p class="card-texti text-left"><%= simple_format(@mArticle.body) %></p>
             <%= link_to "Edit", edit_article_path(@mArticle), class: "btn btn-outline-info" %>
             <%= link_to "Delete", article_path(@mArticle), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-danger" %>
           </div>
