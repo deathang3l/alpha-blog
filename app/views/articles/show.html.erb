@@ -7,3 +7,27 @@
 <%= link_to 'Edit', edit_article_path(@mArticle) %> |
 <%= link_to 'Delete', article_path(@mArticle), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %> |
 <%= link_to 'Return to listing', articles_path %>
+
+<div id="page-content">
+  <h2 class="text-center mt-4"><%= @mArticle.title %></h2>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-8">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+            by Tokarz Cis
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= @mArticle.description %></p>
+            <p class="card-text"><%= @mArticle.body %></p>
+            <%= link_to "Edit", edit_article_path(@mArticle), class: "btn btn-outline-info" %>
+            <%= link_to "Delete", article_path(@mArticle), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-danger" %>
+          </div>
+          <div class="card-footer text-muted">
+            <small>Created <%= time_ago_in_words(@mArticle.created_at) %> ago, edited <%= time_ago_in_words(@mArticle.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
