@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render 'shared/errors', obj: @mUser %>
+      <%= form_with(model: @mUser, class: "shadow p-3 mb-3 bg-info rounded", local: true) do | f | %>
+        <div class="form-group row mb-2">
+          <%= f.label "Username", class: "col-2 col-form-label text-light" %>
+          <div class="col-10">
+            <%= f.text_field :username, class: "form-control shadow rounded", placeholder: "Username" %>
+          </div>
+        </div>
+        <div class="form-group row mb-2">
+          <%= f.label "E-mail", class: "col-2 col-form-label text-light" %>
+          <div class="col-10">
+            <%= f.email_field :email, class: "form-control shadow rounded", placeholder: "Enter your e-mail address" %>
+          </div>
+        </div>
+        <div class="form-group row mb-2">
+          <%= f.label "Password", class: "col-2 col-form-label text-light" %>
+          <div class="col-10">
+            <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Select a password" %>
+          </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit "Sign up", class: "btn btn-outline-light btn-lg col-4", data: {turbo: false} %>
+        </div>
+      <% end %>
+    </div>
+    <div class="justify-content-center">
+      <%= link_to '[Return to listing]', articles_path, class: "text-info" %>
+    </div>
+  </div>
+</div>
+
