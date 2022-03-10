@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   def new
     @mUser = User.new
   end
@@ -14,11 +16,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @mUser = User.find(params[:id])
   end
 
   def update
-    @mUser = User.find(params[:id])
     if @mUser.update(user_params) then
       flash[:notice] = "Your account information was successfully updated"
       redirect_to articles_path
@@ -28,12 +28,17 @@ class UsersController < ApplicationController
   end  
 
   def show
-    @mUser = User.find(param[:id])
     @mArticles = @mUser.articles
   end
 
   private
+
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
+
+  def set_user
+    @mUser = User.find(params[:id])
+  end
+
 end
