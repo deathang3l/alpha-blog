@@ -33,6 +33,8 @@ class UsersController < ApplicationController
 
   def index
     @mUsers = User.all
+  end
+
   private
 
   def user_params
