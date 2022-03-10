@@ -31,6 +31,8 @@ class UsersController < ApplicationController
     @mArticles = @mUser.articles
   end
 
+  def index
+    @mUsers = User.all
   private
 
   def user_params
