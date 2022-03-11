@@ -28,11 +28,11 @@ class UsersController < ApplicationController
   end  
 
   def show
-    @mArticles = @mUser.articles
+    @mArticles = @mUser.articles.paginate(page: params[:page], per_page: 5)
   end
 
   def index
-    @mUsers = User.all
+    @mUsers = User.paginate(page: params[:page], per_page: 5)
   end
 
   private
