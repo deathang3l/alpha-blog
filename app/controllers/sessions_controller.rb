@@ -3,12 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    input = params[:session][:email]
-    if input.include? '@' then
-      user = User.find(email: input.downcase)
-    else
-      user = User.find(username: input)
-    end
+    user = User.find(email: params[:session][:email].downcase)
     if user && use.authenticate(params[:session][:password]) then
       flash[:notice] = "Logged in successfully"
       redirect_to user
