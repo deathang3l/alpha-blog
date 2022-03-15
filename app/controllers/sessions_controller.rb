@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     input = params[:session][:email]
-    if input.includes? '@' then
+    if input.include? '@' then
       user = User.find(email: input.downcase)
     else
       user = User.find(username: input)
