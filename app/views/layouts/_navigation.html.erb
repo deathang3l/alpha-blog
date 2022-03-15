@@ -5,12 +5,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">Nothing here</li>
         <li class="nav-item">
-          <%= link_to "Bloggers", users_path, class: "nav-link color-gold" %>
+          <%= link_to "Bloggers", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle color-gold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Articles
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Articles
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><%= link_to "Create new article", new_article_path, class: "dropdown-item" %>i</li>
@@ -18,7 +17,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <%= link_to "Log in", login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", logout_path, class: "nav-link", data: {turbo_method: :delete} %>
         </li>
       </ul>
       <form class="d-flex">
