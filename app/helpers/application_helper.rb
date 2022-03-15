@@ -7,10 +7,10 @@ module ApplicationHelper
   end
 
   def current_user
-    @mCurrentUser ||= User.find(sesion[:iser_id]) if session[:user_id]
+    @current_user ||= User.find(sesion[:iser_id]) if session[:user_id]
   end
 
   def logged_in?
-    !!mCurrentUser
+    !!current_user
   end
 end
