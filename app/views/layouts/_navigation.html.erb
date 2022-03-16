@@ -30,10 +30,9 @@
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
               <li><%= link_to "My profile", user_path(current_user), class: "nav-link" %></li>
               <li><%= link_to "Create new article", new_article_path, class: "nav-link" %></li>
+              <div class="dropdown-divider"></div>
+              <li><%= link_to "Log out", logout_path, class: "nav-link", data: {turbo_method: :delete} %></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Log out", logout_path, class: "nav-link", data: {turbo_method: :delete} %>
           </li>
         <% end %>
       </ul>
