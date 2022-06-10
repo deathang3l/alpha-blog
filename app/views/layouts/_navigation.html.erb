@@ -12,8 +12,17 @@
           <a class="nav-link dropdown-toggle bg-dark" href="#" id="articleDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Articles</a>
           <ul class="dropdown-menu bg-dark" aria-labelledby="articleDropdown">
             <li><%= link_to "View articles", articles_path, class: "nav-link" %></li>
-            <% if logged_in? %>
+            <% if logged_in? && current_user.admin? %>
               <li><%= link_to "Create new article", new_article_path, class: "nav-link" %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle bg-dark" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+          <ul class="dropdown-menu bg-dark" aria-labelledby="categoryDropdown">
+            <li><%= link_to "View categories", categories_path, class: "nav-link" %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Create new category", new_category_path, class: "nav-link" %></li>
             <% end %>
           </ul>
         </li>
